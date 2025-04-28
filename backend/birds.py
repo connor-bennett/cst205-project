@@ -55,7 +55,7 @@ bird_data = {
             "german": "Austernfischer",
             "scientific": "Haematopus ostralegus",
             "location": "Germany, Amrum",
-            "size": None  # No size given in your list
+            "size": None  # No size given in list
         }
     ]
 }
