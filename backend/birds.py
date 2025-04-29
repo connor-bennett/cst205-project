@@ -5,14 +5,14 @@ bird_data = {
             "german": "Zwergtaucher",
             "scientific": "Tachybaptus ruficollis",
             "location": "Germany, Berlin-Wilhelmsruh",
-            "size": "103k"
+            
         },
         {
             "english": "Little Grebe",
             "german": "Zwergtaucher",
             "scientific": "Tachybaptus ruficollis",
             "location": "Germany, Berlin-Rosenthal",
-            "size": "104k"
+            
         }
     ],
     "Eurasian_Bittern.png": [
@@ -21,7 +21,7 @@ bird_data = {
             "german": "Rohrdommel",
             "scientific": "Botaurus stellaris",
             "location": "Germany, Müritz National Park",
-            "size": "158k"
+            
         }
     ],
     "corn_crake.png": [
@@ -30,14 +30,14 @@ bird_data = {
             "german": "Wachtelkönig",
             "scientific": "Crex crex",
             "location": "Germany, Berlin-Rosenthal",
-            "size": "145k"
+            
         },
         {
             "english": "Corncrake",
             "german": "Wachtelkönig",
             "scientific": "Crex crex",
             "location": "Germany, Berlin-Rosenthal",
-            "size": "308k"
+           
         }
     ],
     "black_tern.png": [
@@ -46,7 +46,7 @@ bird_data = {
             "german": "Trauerseeschwalbe",
             "scientific": "Chlidonias niger",
             "location": "Germany, Mecklenburg-Vorpommern",
-            "size": "170k"
+           
         }
     ],
     "oystercatcher.png": [
@@ -55,7 +55,7 @@ bird_data = {
             "german": "Austernfischer",
             "scientific": "Haematopus ostralegus",
             "location": "Germany, Amrum",
-            "size": None  # No size given in list
+           
         }
     ]
 }

@@ -1,4 +1,6 @@
 Flask
 Flask-Bootstrap
-Pillow
 Flask-WTF
+Pillow
+requests
+beautifulsoup4
