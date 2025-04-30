@@ -3,17 +3,14 @@
 
 from flask import Flask
 from flask import Flask, render_template, url_for
-from flask_bootstrap import Bootstrap
+from flask_bootstrap import Bootstrap5
 from PIL import Image, ImageOps 
 
 import os
 import random
 
-from flask import Flask, render_template
-from flask_bootstrap import Bootstrap
-
 app = Flask(__name__)
-Bootstrap(app)
+bootstrap = Bootstrap5(app)
 
 
 # Routes
