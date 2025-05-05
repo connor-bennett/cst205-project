@@ -15,3 +15,7 @@ bootstrap = Bootstrap5(app)
 @app.route('/')
 def hello():
     return render_template('index.html')
+
+@app.route('/detail')
+def detail():
+    return render_template('detail_page.html')
