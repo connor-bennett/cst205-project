@@ -1,7 +1,6 @@
 # Imports
 #testing julians branch
 
-from flask import Flask
 from flask import Flask, render_template, url_for
 from flask_bootstrap import Bootstrap5
 from PIL import Image, ImageOps 

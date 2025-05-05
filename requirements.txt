@@ -1,5 +1,5 @@
 Flask
-Flask-Bootstrap
+bootstrap-flask
 Flask-WTF
 Pillow
 requests
