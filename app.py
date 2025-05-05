@@ -20,3 +20,6 @@ def hello():
 @app.route('/detail')
 def detail():
     return render_template('detail_page.html')
+
+if __name__== "__main__":
+    app.run(debug==True)
