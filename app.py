@@ -17,5 +17,9 @@ bootstrap = Bootstrap5(app)
 def hello():
     return render_template('index.html')
 
-if __name__ == "__main__":
-    app.run(debug=True)
+@app.route('/detail')
+def detail():
+    return render_template('detail_page.html')
+
+if __name__== "__main__":
+    app.run(debug==True)
