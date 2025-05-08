@@ -3,146 +3,65 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.145.0">
-    <title>Album example · Bootstrap v5.3</title>
-    <link rel=“stylesheet” href=“/static/styles.css”>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
-
-    <script src="../assets/js/color-modes.js"></script>
-
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="apple-touch-icon" href="../assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="../assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="../assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="../assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="../assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-<link rel="icon" href="../assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#712cf9">
-
-  {{ bootstrap.load_css() }}
+    <title>Bird Encyclopedia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    {{ bootstrap.load_css() }}
   </head>
   <body>
+    <!-- SVG icon defs (copy this block from your existing template) -->
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-  <symbol id="check2" viewBox="0 0 16 16">
-    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-  </symbol>
-  <symbol id="circle-half" viewBox="0 0 16 16">
-    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-  </symbol>
-  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-  </symbol>
-  <symbol id="sun-fill" viewBox="0 0 16 16">
-    <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-  </symbol>
-</svg>
+      <symbol id="check2" viewBox="0 0 16 16">…</symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">…</symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">…</symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">…</symbol>
+    </svg>
 
-<main>
+    <main>
+      <section class="py-5 text-center container">
+        <div class="row py-lg-2">
+          <div class="col-lg-9 col-md-8 mx-auto">
+            <h1 class="fw-light">BIRD ENCYCLOPEDIA</h1>
+            <h3 class="fw-light">CST 205 Final Project | Team 8241</h3>
+            <p class="lead text-body-secondary">Learn about and listen to birds that hail from the EU.</p>
+          </div>
+        </div>
+      </section>
 
-  <section class="py-5 text-center container">
-    <div class="row py-lg-2">                 <!-- originally 5, py-lg changes the cushion below and above the header text-->
-      <div class="col-lg-9 col-md-8 mx-auto"> <!-- orginially 6, col-lg changes the cushion on the header text's sides -->
-        <h1 class="fw-light">BIRD ENCYCLOPEDIA</h1>
-        <h3 class="fw-light">CST 205 Final Project || Team 8241</h3>
-        <p class="lead text-body-secondary">Learn about and listen to birds that hail from the EU.</p>
+      <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-3 row-cols-md-6 g-3">
+            {% for bird in birds %}
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="{{ bird.image }}"
+                     class="card-img-top"
+                     width="100%" height="225"
+                     alt="{{ bird.details[0].english }}">
+                <div class="card-body">
+                  <p class="card-text">{{ bird.details[0].english }}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="{{ url_for('detail', bird_name=bird.image.split('/')[-1]) }}"
+                         class="btn btn-sm btn-outline-secondary">View</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </main>
 
-  <div class="album py-5 bg-body-tertiary">
-    <div class="container">
+    <footer class="text-body-secondary py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#top">Back to top</a>
+        </p>
+      </div>
+    </footer>
 
-      <!--<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">-->
-      <div class="row row-cols-1 row-cols-sm-3 row-cols-md-6 g-3"> 
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="{{ url_for('static', filename='images/little_grebe.png') }}" class="card-img-top" width="100%" height="225" alt="Black Tern">            
-            <div class="card-body">
-              <p class="card-text">Little Grebe/Dabchick</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                </div>
-                <small class="text-body-secondary"></small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="{{ url_for('static', filename='images/Eurasian_Bittern.png') }}" class="card-img-top" width="100%" height="225" alt="Eurasian Bittern">             
-            <div class="card-body">
-              <p class="card-text">Eurasian Bittern</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                </div>
-                <small class="text-body-secondary"></small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="{{ url_for('static', filename='images/corn_crake.png') }}" class="card-img-top" width="100%" height="225" alt="Eurasian Bittern">             
-            <div class="card-body">
-              <p class="card-text">Corncrake</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                </div>
-                <small class="text-body-secondary"></small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="{{ url_for('static', filename='images/black_tern.png') }}" class="card-img-top" width="100%" height="225" alt="Eurasian Bittern">             
-            <div class="card-body">
-              <p class="card-text">Black Tern</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                </div>
-                <small class="text-body-secondary"></small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="{{ url_for('static', filename='images/oystercatcher.png') }}" class="card-img-top" width="100%" height="225" alt="Eurasian Bittern">             
-            <div class="card-body">
-              <p class="card-text">Oystercatcher</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                </div>
-                <small class="text-body-secondary"></small>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-
-</main>
-
-<footer class="text-body-secondary py-5">
-  <div class="container">
-    <p class="float-end mb-1">
-      <a href="#">Back to top</a>
-    </p>
-    <!--<p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>-->
-    <!--<p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>-->
-  </div>
-</footer>
-<script defer src="../assets/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"></script>
-
-    </body>
+    {{ bootstrap.load_js() }}
+  </body>
 </html>
