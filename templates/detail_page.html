@@ -3,38 +3,35 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ bird.details[0].english }} — Bird Encyclopedia</title>
+    <title>{{ bird.details.english }} — Bird Encyclopedia</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     {{ bootstrap.load_css() }}
   </head>
   <body>
-    <!-- SVG icon defs (same as index.html) -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-      <symbol id="check2" viewBox="0 0 16 16">…</symbol>
-      <symbol id="circle-half" viewBox="0 0 16 16">…</symbol>
-      <symbol id="moon-stars-fill" viewBox="0 0 16 16">…</symbol>
-      <symbol id="sun-fill" viewBox="0 0 16 16">…</symbol>
-    </svg>
-
     <main class="container py-5">
       <div class="text-center mb-4">
-        <h1 class="fw-light">{{ bird.details[0].english }}</h1>
-        <h4 class="fw-light">{{ bird.details[0].german }}</h4>
-        <h5><em>{{ bird.details[0].scientific }}</em></h5>
-        <p class="lead">{{ bird.details[0].location }}</p>
+        <h1 class="fw-light">{{ bird.details.english }}</h1>
+        <h4 class="fw-light">{{ bird.details.german }}</h4>
+        <h5><em>{{ bird.details.scientific }}</em></h5>
+        <p class="lead">{{ bird.details.location }}</p>
       </div>
 
       <div class="row justify-content-center">
         <div class="col-md-6">
-          <img src="{{ bird.image }}" class="img-fluid mb-3" alt="{{ bird.details[0].english }}">
-          <p><strong>Population:</strong> {{ bird.details[0].population }}</p>
-          <p>{{ bird.details[0].description }}</p>
+          <form method="POST">
+            <button type="submit" class="btn btn-primary mb-3">Apply Random Filter</button>
+          </form>
+
+          <img src="{{ bird.image_data }}" class="img-fluid mb-3" alt="{{ bird.details.english }}">
+          <p><strong>Population:</strong> {{ bird.details.population }}</p>
+          <p>{{ bird.details.description }}</p>
           <audio controls class="w-100">
             <source src="{{ bird.audio }}" type="audio/wav">
             Your browser does not support the audio element.
           </audio>
+
           <div class="mt-4">
-            <a href="{{ url_for('hello') }}" class="btn btn-primary">← Back to Homepage</a>
+            <a href="{{ url_for('hello') }}" class="btn btn-outline-secondary">← Back to Homepage</a>
           </div>
         </div>
       </div>
