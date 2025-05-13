@@ -122,22 +122,10 @@ This image is converted to a base64 URI and displayed directly, without writing 
 }
 ```
 
-## 📸 Screenshots
-
-*Add screenshots here using markdown or drag-and-drop if uploading to GitHub.*
-
----
-
 ## 👨‍💻 Credits
 
-* Developed by **Team 8241** for CST 205 Final Project
+* Developed by **Team 8241** for CST 205 Final Project:
+* Connor Bennett, Julian Mendoza, Ulises Rodriguez
 * Audio data courtesy of [Avisoft Bioacoustics](https://avisoft.com/animal-sounds/)
 * Styled using **Bootstrap 5**
 
----
-
-Let me know if you’d like me to:
-
-* Add badge icons (Python version, license, etc.)
-* Include screenshots
-* Generate `requirements.txt` content explicitly if not done already.
