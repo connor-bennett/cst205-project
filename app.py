@@ -8,6 +8,8 @@ from PIL import Image, ImageOps
 import os
 import random
 
+from backend import birds
+
 app = Flask(__name__)
 bootstrap = Bootstrap5(app)
 
@@ -17,9 +19,10 @@ bootstrap = Bootstrap5(app)
 def hello():
     return render_template('index.html')
 
-@app.route('/detail')
-def detail():
-    return render_template('detail_page.html')
+@app.route('/detail/<img_name>')
+def detail(img_name):
+    bird_data = birds.bird_data
+    return render_template('detail_page.html', img_name=img_name, bird_info=bird_data)
 
 if __name__== "__main__":
     app.run(debug==True)

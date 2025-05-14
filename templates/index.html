@@ -58,16 +58,20 @@
     <div class="container">
 
       <!--<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">-->
-      <div class="row row-cols-1 row-cols-sm-3 row-cols-md-6 g-3"> 
+      <div class="row row-cols-1 row-cols-sm-3 row-cols-md-5 g-3"> 
         <div class="col">
           <div class="card shadow-sm">
             <img src="{{ url_for('static', filename='images/little_grebe.png') }}" class="card-img-top" width="100%" height="225" alt="Black Tern">            
             <div class="card-body">
               <p class="card-text">Little Grebe/Dabchick</p>
               <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
+
+                <a href="{{ url_for('detail', img_name='little_grebe') }}"> 
+                  <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                 </div>
+                </a>
+
                 <small class="text-body-secondary"></small>
               </div>
             </div>
@@ -79,9 +83,13 @@
             <div class="card-body">
               <p class="card-text">Eurasian Bittern</p>
               <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
+
+                <a href="{{ url_for('detail', img_name='Eurasian_Bittern') }}"> 
+                  <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                 </div>
+                </a>
+
                 <small class="text-body-secondary"></small>
               </div>
             </div>
@@ -93,9 +101,13 @@
             <div class="card-body">
               <p class="card-text">Corncrake</p>
               <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
+                
+                <a href="{{ url_for('detail', img_name='corn_crake') }}"> 
+                  <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                 </div>
+                </a>
+
                 <small class="text-body-secondary"></small>
               </div>
             </div>
@@ -107,9 +119,13 @@
             <div class="card-body">
               <p class="card-text">Black Tern</p>
               <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
+                
+                <a href="{{ url_for('detail', img_name='black_tern') }}"> 
+                  <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                 </div>
+                </a>
+
                 <small class="text-body-secondary"></small>
               </div>
             </div>
@@ -121,9 +137,13 @@
             <div class="card-body">
               <p class="card-text">Oystercatcher</p>
               <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
+                
+                <a href="{{ url_for('detail', img_name='oystercatcher') }}"> 
+                  <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                 </div>
+                </a>
+
                 <small class="text-body-secondary"></small>
               </div>
             </div>
