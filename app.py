@@ -55,9 +55,11 @@ def detail(bird_name):
 
     image_data = pil_to_data_uri(img_obj)
 
+    # Data that call in the directory 
     bird_info = {
         'image_data': image_data,
         'audio': url_for('static', filename=f'bird_audio/{data["audio"]}'),
+        'ai': url_for('static', filename=f'sound_images/{data["ai"]}'),
         'details': data["details"][0],
         'choice': choice
     }

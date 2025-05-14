@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html> 
 <html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     {{ bootstrap.load_css() }}
   </head>
-  <body>
+  <body>  <!--Set up for bird information (picture, name, population, etc)-->
     <main class="container py-5">
       <div class="text-center mb-4">
         <h1 class="fw-light">{{ bird.details.english }}</h1>
@@ -18,23 +18,25 @@
 
       <div class="row justify-content-center">
         <div class="col-md-6">
-          <form method="POST">
+          <form method="POST">     <!--Random image filter to the birds-->
             <button type="submit" class="btn btn-primary mb-3">Apply Random Filter</button>
           </form>
 
           <img src="{{ bird.image_data }}" class="img-fluid mb-3" alt="{{ bird.details.english }}">
           <p><strong>Population:</strong> {{ bird.details.population }}</p>
           <p>{{ bird.details.description }}</p>
-          <audio controls class="w-100">
+          <audio id="audio-player" preload="none">
             <source src="{{ bird.audio }}" type="audio/wav">
             Your browser does not support the audio element.
           </audio>
 
-          <div class="mt-4">
-            <a href="{{ url_for('hello') }}" class="btn btn-outline-secondary">← Back to Homepage</a>
-          </div>
-        </div>
-      </div>
+          <!--PLAY/PAUSE BUTTON-->
+          <button id="play-audio-btn" class="btn btn-primary mb-3">Play Call</button>
+
+          <!-- Hidden spectrogram GIF; will show on play -->
+          <img id="sound-image" src="{{ bird.ai }}" class="img-fluid mb-3 d-none" alt="bird sound image"/>
+
+
     </main>
 
     <footer class="text-body-secondary py-5">
@@ -46,5 +48,32 @@
     </footer>
 
     {{ bootstrap.load_js() }}
+     <!-- PLAY/PAUSE SCRIPT -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const audio = document.getElementById('audio-player');
+        const btn   = document.getElementById('play-audio-btn');
+
+        // Toggle play/pause on button click
+        btn.addEventListener('click', () => {
+          if (audio.paused) {
+            audio.play();
+            btn.textContent = 'Pause Call';
+          } else {
+            audio.pause();
+            btn.textContent = 'Play Call';
+          }
+        });
+
+        // Show spectrogram when playing
+        audio.addEventListener('play', () => {
+          document.getElementById('sound-image').classList.remove('d-none');
+        });
+        // Hide spectrogram when paused/not playing
+        audio.addEventListener('pause', () => {
+          document.getElementById('sound-image').classList.add('d-none');
+        });
+      });
+    </script>
   </body>
 </html>

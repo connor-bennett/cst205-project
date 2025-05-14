@@ -1,6 +1,7 @@
 bird_data = {
     "little_grebe.png": {
         "audio": "zwergta.wav",
+        "ai": "zwergta.gif",
         "details": [
             {
                 "english": "Little Grebe",
@@ -22,6 +23,7 @@ bird_data = {
     },
     "Eurasian_Bittern.png": {
         "audio": "rohrdomm.wav",
+        "ai": "rohrdomm.gif",
         "details": [
             {
                 "english": "Bittern",
@@ -35,6 +37,7 @@ bird_data = {
     },
     "corn_crake.png": {
         "audio": "corncrak.wav",
+        "ai": "corncrak.gif",
         "details": [
             {
                 "english": "Corncrake",
@@ -48,6 +51,7 @@ bird_data = {
     },
     "black_tern.png": {
         "audio": "blackter.wav",
+        "ai": "blackter.gif",
         "details": [
             {
                 "english": "Black Tern",
@@ -61,6 +65,7 @@ bird_data = {
     },
     "oystercatcher.png": {
         "audio": "oysterc.wav",
+        "ai": "oysterc.gif",
         "details": [
             {
                 "english": "Oystercatcher",
