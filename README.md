@@ -38,6 +38,7 @@ A Flask web application that allows users to browse, learn about, view, and list
   * **Sunset** (adds warm tones)
   * **Grayscale** (black-and-white)
 * Built-in Bootstrap 5 theming with a dark mode design.
+* Spectrogram Viewing of each Bird Noise
 
 ## 🧠 Technologies Used
 
@@ -57,6 +58,10 @@ A Flask web application that allows users to browse, learn about, view, and list
 ## 🔊 Scraper (`scrape.py`)
 
 Downloads the first 7 `.wav` or `.mp3` bird audio files from `https://avisoft.com/animal-sounds/` into `static/bird_audio/`. Automatically skips already downloaded files.
+
+## Spectrogram Scraper ('audio.py')
+
+Downloads the first 7 `.img` or `.gif` bird image files from `https://avisoft.com/animal-sounds/#birds` into `static/sound_images/`. Skips already downloaded files. 
 
 ## 📷 Dynamic Filtering Logic
 
